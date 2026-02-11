@@ -28,17 +28,17 @@
 @layer components {
   /* Pixel/Retro font - VT323 for headings and special emphasis */
   .font-pixel {
-    @apply font-[VT323];
+    font-family: 'VT323', monospace;
   }
 
   /* Monospace - IBM Plex Mono for code and technical content */
   .font-mono-brand {
-    @apply font-[IBM\ Plex\ Mono];
+    font-family: 'IBM Plex Mono', monospace;
   }
 
   /* Sans serif - Inter for body text and general UI */
   .font-sans-brand {
-    @apply font-[Inter];
+    font-family: 'Inter', sans-serif;
   }
 }
 

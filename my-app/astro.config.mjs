@@ -3,6 +3,7 @@ import { defineConfig } from 'astro/config';
 
 import tailwind from '@astrojs/tailwind';
 import vercel from '@astrojs/vercel/static';
+import sentry from '@sentry/astro';
 
 // https://astro.build/config
 /**
@@ -30,7 +31,15 @@ export default defineConfig({
   output: 'static',
 
   // Astro integrations for enhanced functionality
-  integrations: [tailwind()],
+  integrations: [
+    tailwind(),
+    sentry({
+      // Disable server-side initialization for static sites
+      // This is client-side only error tracking
+      serverInitPath: false,
+      // Sentry configuration is now in sentry.client.config.js
+    }),
+  ],
 
   // Vercel adapter configuration for static site deployment
   adapter: vercel({
